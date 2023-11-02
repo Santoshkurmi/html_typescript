@@ -1,7 +1,9 @@
-import { changeColor } from "./fun.js";
 
-alert("Hello")
-const tiger = document.getElementsByTagName("h1").item(0);
+const header: HTMLElement | null = document.getElementById("header");
 
-tiger?.style.color = "red";
-tiger.addEventListener('click', changeColor)
+
+const changeColor = (e: MouseEvent) => {
+    if (header) header.style.color = "red";
+}
+
+if (header) header.addEventListener("click", changeColor);
